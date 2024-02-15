@@ -8,7 +8,9 @@ def exportCsv(URL, mode):
     # Only creating a new file
     if (URL == "create"):
         with open('crimeData.csv', 'w', newline='') as file:
-            pass
+            writer = csv.writer(file)
+            colNames = ["Nature", "Case Number", "Date/Time Occured", "Date/Time Reported", "Location", "Disposition"]
+            writer.writerow(colNames)
         return
 
     try:
